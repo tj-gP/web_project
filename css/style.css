@@ -1,0 +1,264 @@
+html {
+    scroll-behavior: smooth;
+} 
+        /* 기본 CSS 초기화 및 폰트 설정 (추후 분리 권장) */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            margin: 0;
+            background-color: #FFF6D6; /* 노랑 계열 */
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Cafe24 Supermagic', sans-serif;
+            color: #FF9D76; /* 오렌지 계열 */
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #F6C965; /* 노랑-오렌지 계열 */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #FF9D76;
+        }
+
+        /* 홈 섹션 */
+        #home {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #FFF6D6;
+            min-height: 70vh; /* 임시 높이 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #home .main-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        #home .welcome-text {
+            margin-top: 40px;
+        }
+        #home .welcome-text h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #FF9D76;
+        }
+        #home .welcome-text p {
+            font-size: 1.3em;
+            color: #666;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #FF9D76;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #F6C965;
+            transform: translateY(-3px);
+        }
+
+        /* 오늘의 춘식이 섹션 */
+        #today-chunsik {
+            background-color: #F6C965;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        #today-chunsik h2 {
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        #today-chunsik .illustration-area {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #today-chunsik .illustration-area img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #today-chunsik .illustration-area p {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* 서브 페이지 공통 스타일 (나머지 페이지에 적용될 예정) */
+        .sub-page-header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #FF9D76;
+            color: white;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .sub-page-header h2 {
+            font-size: 3em;
+            margin: 0;
+            color: white;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #F6C965;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        footer .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            filter: brightness(0) invert(1); /* 흰색 아이콘으로 변경 */
+        }
+ 
+        /* 굿즈 정보 섹션 */
+#goods {
+    /* 기존 스타일 유지 */
+    padding-bottom: 80px; /* 푸터와 겹치지 않도록 하단 패딩 추가 */
+}
+
+/* 굿즈 리스트 컨테이너 */
+.goods-list {
+    display: grid; /* 그리드 레이아웃 사용 */
+    /* 화면 크기에 따라 최소 280px, 최대 1fr(남은 공간)로 아이템을 배치 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* 아이템 사이의 간격 */
+    margin-top: 40px;
+    justify-content: center; /* 그리드 아이템들을 중앙으로 정렬 (전체 그리드가 중앙에 오는 것은 아님) */
+}
+
+/* 개별 굿즈 아이템 카드 스타일 */
+.goods-item {
+    background-color: #fff;
+    border-radius: 15px; /* 둥근 모서리 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* 부드러운 그림자 */
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 호버 시 애니메이션 */
+    display: flex; /* flexbox를 사용하여 내부 요소 정렬 */
+    flex-direction: column; /* 자식 요소들을 세로로 정렬 */
+    justify-content: space-between; /* 내용을 위로, 버튼을 아래로 분리 */
+}
+
+.goods-item:hover {
+    transform: translateY(-8px); /* 마우스 오버 시 살짝 위로 */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 그림자 강화 */
+}
+
+.goods-item img {
+    max-width: 90%; /* 이미지가 부모 너비를 넘지 않도록 */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 이미지 그림자 */
+}
+
+.goods-item h3 {
+    font-family: 'Cafe24 Supermagic', sans-serif;
+    font-size: 1.5em;
+    color: #FF9D76; /* 오렌지 계열 */
+    margin-bottom: 10px;
+}
+
+.goods-item p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 25px;
+    flex-grow: 1; /* 단락이 길어져도 버튼이 하단에 고정되도록 */
+}
+
+/* "구매하러 가기" 버튼 스타일 */
+.buy-button {
+    display: inline-block; /* 인라인 블록으로 패딩과 마진 적용 가능 */
+    background-color: #FF9D76; /* 오렌지 계열 */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px; /* 둥근 버튼 */
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 157, 118, 0.3); /* 버튼 자체 그림자 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.buy-button:hover {
+    background-color: #F6C965; /* 호버 시 색상 변경 */
+    transform: translateY(-3px); /* 살짝 위로 올라가는 효과 */
+    box-shadow: 0 6px 12px rgba(246, 201, 101, 0.4); /* 호버 시 그림자 강화 */
+}
+
+/* --- 모바일 반응형 (필수) --- */
+@media (max-width: 768px) {
+    .goods-list {
+        grid-template-columns: 1fr; /* 화면 너비가 768px 이하일 때 1열로 표시 */
+    }
+    .goods-item {
+        padding: 20px;
+    }
+    .buy-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .goods-item img {
+        max-width: 100%;
+    }
+}
